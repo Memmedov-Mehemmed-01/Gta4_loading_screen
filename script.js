@@ -1,8 +1,11 @@
+const music2 = document.querySelector('#player2')
+const music = document.querySelector('#player');
+const menuScreen = document.querySelector(".menuScreen");
 window.onload = function() {
     const blueLogo = document.querySelector('.logo_blue');
+    const gameLogos = document.querySelector('.gameLogos');
     const yellowLogo = document.querySelector('.logo_yellow');
     const textLogo = document.querySelector('.text_logo');
-    const music = document.querySelector('#player');
 
     // Ensure the audio plays correctly
     music.play()
@@ -37,5 +40,13 @@ window.onload = function() {
     // Music stops 
     setTimeout(() => {
         music.pause();
-    }, 13700);
+        menuScreen.classList.add('show');
+        gameLogos.classList.add('remove');
+    }, 13500);
 };
+// play music
+function playMusic() {
+    menuScreen.classList.remove('show');
+    music2.play();
+    music.play();
+}
